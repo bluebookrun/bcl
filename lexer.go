@@ -139,6 +139,13 @@ func (l *lexer) nextItem() item {
 	return item
 }
 
+// drain lexer so we can terminate goroutine.
+// called by the client only
+func (l *lexer) drain() {
+	for _ = range l.items {
+	}
+}
+
 //
 // lexer states
 //
