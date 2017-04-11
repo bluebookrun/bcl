@@ -191,7 +191,7 @@ func (t *Tree) parseList() *ListNode {
 		token := t.next()
 		if token.typ == itemString {
 			l.append(t.newString(token.value))
-		} else if token.typ == itemComma {
+		} else if token.typ == itemComma || token.typ == itemSpace {
 			// ignore
 		} else if token.typ == itemListEnd {
 			break
