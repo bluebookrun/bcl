@@ -221,7 +221,7 @@ func lexComment(l *lexer) stateFn {
 		r := l.next()
 		if r == eof || isNewLine(r) {
 			l.backup()
-			l.emit(itemComment)
+			l.ignore()
 			return lexStart
 		}
 	}
